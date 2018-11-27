@@ -11,7 +11,8 @@ from utils import StyleLoader
 
 def run_demo(args, mirror=False):
 	style_model = Net(ngf=args.ngf)
-	style_model.load_state_dict(torch.load(args.model))
+	#style_model.load_state_dict(torch.load(args.model))
+	track_running_stats=True
 	style_model.eval()
 	if args.cuda:
 		style_loader = StyleLoader(args.style_folder, args.style_size)
